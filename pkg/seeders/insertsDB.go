@@ -8,6 +8,7 @@ import (
 
 func InsertDBOne(db *gorm.DB) {
 	tx := db.Begin()
+	db.Exec("DELETE FROM source_product")
 	var sourceProducts *[]entity.SourceProduct
 
 	db.Find(&sourceProducts)
@@ -21,6 +22,7 @@ func InsertDBOne(db *gorm.DB) {
 
 func InsertDBTwo(db *gorm.DB) {
 	tx := db.Begin()
+	db.Exec("DELETE FROM destination_product")
 	var destinationProducts *[]entity.DestinationProduct
 
 	db.Find(&destinationProducts)
