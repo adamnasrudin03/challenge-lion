@@ -38,15 +38,15 @@ func SetupDBonnectionTwo() *gorm.DB {
 			entity.DestinationProduct{},
 		)
 	}
-	// async insert record to db
-	go seeders.InsertDBTwo(db)
+	// insert record to db
+	seeders.InsertDBTwo(db)
 
-	log.Println("Connection Database Success!")
+	log.Println("Connection Database Two Success!")
 	return db
 }
 
 // Close Db Connection method is closing a connection between your app and your db
-func CloseDBConnectioTwo(db *gorm.DB) {
+func CloseDBConnectionTwo(db *gorm.DB) {
 	dbSQL, err := db.DB()
 	if err != nil {
 		panic("Failed to close connection from database")

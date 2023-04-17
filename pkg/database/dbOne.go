@@ -38,10 +38,10 @@ func SetupDBonnectionOne() *gorm.DB {
 			entity.SourceProduct{},
 		)
 	}
-	// async insert record to db
-	go seeders.InsertDBOne(db)
+	// insert record to db
+	seeders.InsertDBOne(db)
 
-	log.Println("Connection Database Success!")
+	log.Println("Connection Database One Success!")
 	return db
 }
 
