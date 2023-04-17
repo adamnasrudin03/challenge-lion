@@ -2,8 +2,8 @@
  recuirement
  
 ```
-get all source_product data then change the destination_product data with the get source_product data
-Update data it's running background prosess
+get all source_product data then change the destination_product data with the get source_product data.
+Update data it's running background process
 ```
 
 # How to run this project
