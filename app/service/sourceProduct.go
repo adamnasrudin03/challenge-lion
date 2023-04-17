@@ -40,14 +40,14 @@ func (srv *spSrv) GetAll(ctx *gin.Context) (result []entity.SourceProduct, statu
 
 	for _, v := range result {
 		go func(sp entity.SourceProduct) {
-			destination := entity.DestinationProduct{
+			dp := entity.DestinationProduct{
 				ID:           sp.ID,
 				ProductName:  sp.ProductName,
 				Qty:          sp.Qty,
 				PromoPrice:   sp.PromoPrice,
 				SellingPrice: sp.SellingPrice,
 			}
-			_, _ = srv.DestionationProductRepo.UpdateByID(ctx, sp.ID, destination)
+			_, _ = srv.DestionationProductRepo.UpdateByID(ctx, sp.ID, dp)
 
 		}(v)
 	}
