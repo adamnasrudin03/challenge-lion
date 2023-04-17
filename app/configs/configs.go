@@ -59,21 +59,21 @@ func GetInstance() *Configs {
 
 			Dbconfigone: DbConfigOne{
 				Host:        getEnv("DB_HOST_ONE", "localhost"),
-				Port:        getEnv("DB_PORT_ONE", "3306"),
-				Username:    getEnv("DB_USER_ONE", "root"),
+				Port:        getEnv("DB_PORT_ONE", "5432"),
+				Username:    getEnv("DB_USER_ONE", "postgres"),
 				Password:    getEnv("DB_PASSWORD_ONE", ""),
-				Dbname:      getEnv("DB_DBNAME_ONE", "test_db"),
+				Dbname:      getEnv("DB_NAME_ONE", "db_source"),
 				DbIsMigrate: getEnv("DB_ISMIGRATE_ONE", "true") == "true",
-				DebugMode:   getEnv("DEBUG_MODE_ONE", "true") == "true",
+				DebugMode:   getEnv("DEBUG_MODE_ONE", "false") == "true",
 			},
 			Dbconfigtwo: DbConfigTwo{
 				Host:        getEnv("DB_HOST_TWO", "localhost"),
-				Port:        getEnv("DB_PORT_TWO", "3306"),
-				Username:    getEnv("DB_USER_TWO", "root"),
+				Port:        getEnv("DB_PORT_TWO", "5432"),
+				Username:    getEnv("DB_USER_TWO", "postgres"),
 				Password:    getEnv("DB_PASSWORD_TWO", ""),
-				Dbname:      getEnv("DB_DBNAME_TWO", "test_db"),
+				Dbname:      getEnv("DB_NAME_TWO", "db_destination"),
 				DbIsMigrate: getEnv("DB_ISMIGRATE_TWO", "true") == "true",
-				DebugMode:   getEnv("DEBUG_MODE_TWO", "true") == "true",
+				DebugMode:   getEnv("DEBUG_MODE_TWO", "false") == "true",
 			},
 		}
 		lock.Unlock()
