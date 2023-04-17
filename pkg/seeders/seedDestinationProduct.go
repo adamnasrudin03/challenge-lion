@@ -11,7 +11,7 @@ func SeedDestinationProducts() *[]entity.DestinationProduct {
 	for i := 1; i <= 500; i++ {
 		product := entity.DestinationProduct{
 			ID:           uint64(i),
-			ProductName:  fmt.Sprintf("Product %v", i),
+			ProductName:  fmt.Sprintf("Destination Product %v", i),
 			Qty:          0,
 			SellingPrice: 0,
 			PromoPrice:   0,
