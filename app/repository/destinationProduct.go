@@ -39,6 +39,7 @@ func (repo *dpRepo) GetAll(ctx *gin.Context) (result []entity.DestinationProduct
 func (repo *dpRepo) UpdateByID(ctx *gin.Context, ID uint64, input entity.DestinationProduct) (result entity.DestinationProduct, err error) {
 	query := repo.DB.WithContext(ctx)
 
+	log.Printf("Process update Destination Product, id: %+v \n", ID)
 	err = query.Model(&result).Where("id = ?", ID).Updates(input).Error
 	if err != nil {
 		log.Printf("[DestinationProductRepository-UpdateByID][%v] error: %+v \n", ID, err)
