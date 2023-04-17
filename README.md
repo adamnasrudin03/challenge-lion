@@ -1,5 +1,10 @@
-# To Do List
-this is simple res api 
+# Chllenge Lion
+ recuirement
+ 
+```
+get all source_product data then change the destination_product data with the get source_product data
+Update data it's running background prosess
+```
 
 # How to run this project
 
@@ -9,6 +14,8 @@ this is simple res api
 ```
 go run main.go
 ```
+# Enpoint
+1. [GET] {{base-url}}/source-products
 
 # Testing api with postman
 
