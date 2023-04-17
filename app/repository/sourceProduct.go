@@ -7,7 +7,6 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"gorm.io/gorm"
-	"gorm.io/gorm/clause"
 )
 
 type SourceProductRepository interface {
@@ -40,7 +39,7 @@ func (repo *spRepo) GetAll(ctx *gin.Context) (result []entity.SourceProduct, err
 func (repo *spRepo) UpdateByID(ctx *gin.Context, ID uint64, input entity.SourceProduct) (result entity.SourceProduct, err error) {
 	query := repo.DB.WithContext(ctx)
 
-	err = query.Clauses(clause.Returning{}).Model(&result).Where("id = ?", ID).Updates(input).Error
+	err = query.Model(&result).Where("id = ?", ID).Updates(input).Error
 	if err != nil {
 		log.Printf("[SourceProductRepository-UpdateByID][%v] error: %+v \n", ID, err)
 		return result, err
